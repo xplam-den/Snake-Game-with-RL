@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# TensorFlow/Keras model files
+*.h5
+Model/
+
+# Logs and outputs
+Rewards.txt
+
+# IDE and OS files
+.DS_Store
+.idea/
+.vscode/
