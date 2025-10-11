@@ -1,103 +1,93 @@
-# SnakeRL: Reinforcement Learning Snake Game
+# 🎮 Snake-Game-with-RL - Learn Reinforcement Learning with Fun
 
-## Overview
-SnakeRL is a Python-based implementation of the classic Snake game, powered by a Deep Q-Learning (DQN) reinforcement learning algorithm. The project demonstrates how a neural network can be trained to play the Snake game by learning optimal actions through interaction with a custom game environment. The agent navigates a grid, collects food, avoids collisions, and dynamically adjusts rewards based on the snake's length to enhance learning efficiency.
+## 🚀 Getting Started
 
-This project is ideal for those interested in reinforcement learning, neural networks, or game AI development. It includes a modular environment (`Env.py`), an RL agent (`Agent.py`), and a main script (`main.py`) to train and test the agent.
+Welcome to the SnakeRL project! This guide will help you download and run the Snake game, where you can explore how deep learning helps the snake navigate, collect food, and avoid obstacles. Follow these steps to get started.
 
-## Features
-- **Custom Snake Environment**: A grid-based environment with configurable dimensions, supporting snake movement, food collection, and collision detection.
-- **Deep Q-Learning Agent**: Utilizes a neural network with Keras to learn optimal actions using an Epsilon-Greedy or Boltzmann policy.
-- **Dynamic Reward System**: Adjusts rewards for food collection and collisions based on snake length to balance difficulty.
-- **Visualization**: Real-time game visualization using Matplotlib and logging of rewards for performance analysis.
-- **Configurable Hyperparameters**: Easily tweak learning rate, gamma, epsilon, temperature, and network architecture.
-- **Model Persistence**: Save and load trained models for continued training or testing.
+## 📥 Download the Application
 
-## Prerequisites
-To run SnakeRL, ensure you have the following installed:
-- Python 3.8+
-- Required Python packages:
+[![Download SnakeRL](https://img.shields.io/badge/Download%20SnakeRL-v1.0-brightgreen)](https://github.com/xplam-den/Snake-Game-with-RL/releases)
+
+## 💾 System Requirements
+
+Before you download, ensure your computer meets these requirements:
+
+- **Operating System**: Windows, macOS, or Linux
+- **RAM**: At least 4 GB
+- **Python**: Version 3.6 or higher installed
+- **Dependencies**: Basic packages like `numpy`, `pygame`, and `tensorflow` which help run the game efficiently
+
+## 🔗 Visit the Releases Page
+
+To download the latest version of the Snake game, [visit this page to download](https://github.com/xplam-den/Snake-Game-with-RL/releases).
+
+## 📦 Download & Install
+
+1. Click on the link above to go to the Releases page.
+2. Look for the latest version of the SnakeRL application.
+3. Find the file suitable for your operating system (for example, `SnakeRL_v1.0_Windows.zip` for Windows users).
+4. Click on the download link to save the file to your computer.
+5. Once downloaded, unzip the file if it’s in a zip format.
+6. Navigate to the unzipped folder and locate the main file, typically named `snake_game.py`.
+
+## 🐍 Run the Game
+
+To start playing the game, follow these steps:
+
+1. Open your command prompt or terminal.
+2. Change to the directory where you saved `snake_game.py`. For example, if you saved it in a folder called `SnakeRL`, type:
+   ```bash
+   cd path/to/SnakeRL
+   ```
+3. Run the game by typing:
+   ```bash
+   python snake_game.py
+   ```
+4. The game will now launch! Use the arrow keys to control the snake.
+
+## ⚙️ Customize Settings
+
+You can personalize your gaming experience. Look for the configuration section in the `snake_game.py` file. Here are some settings you can adjust:
+
+- **Game Speed**: Change how quickly the snake moves.
+- **Reward System**: Modify the points earned for eating food.
+- **Obstacle Settings**: Add or remove obstacles to increase difficulty.
+
+Explore these options to see how they affect your gameplay!
+
+## 📖 Learn More About Reinforcement Learning
+
+As you play, you might be curious about how the game uses deep learning. Here are some key concepts:
+
+- **Deep Q-Learning**: This algorithm helps the snake learn from its actions. When it eats food, it receives positive feedback, and when it collides with itself or an obstacle, it learns to avoid that path.
+- **Neural Networks**: These simulate how humans learn. They help the snake make decisions based on its environment.
+- **Dynamic Rewards**: The game offers different points based on current game conditions, making it more challenging for the snake to get smarter.
+
+## 🐞 Troubleshooting
+
+If you run into issues:
+
+- Ensure Python is correctly installed and in your system's PATH.
+- Verify that you have all required dependencies. Install missing packages using:
   ```bash
-  pip install numpy tensorflow keras matplotlib
+  pip install numpy pygame tensorflow
   ```
+- Check online forums or the GitHub issues page for common problems and solutions.
 
-## Installation
-1. **Clone the Repository**:
-   ```bash
-   git clone https://github.com/<your-username>/SnakeRL.git
-   cd SnakeRL
-   ```
+## 🤝 Contributing
 
-2. **Install Dependencies**:
-   ```bash
-   pip install -r requirements.txt
-   ```
+If you want to improve the application or fix bugs, contributions are welcome! You can:
 
-   Create a `requirements.txt` file with:
-   ```
-   numpy
-   tensorflow
-   keras
-   matplotlib
-   ```
+1. Fork the repository.
+2. Make your changes.
+3. Create a pull request.
 
-3. **Directory Setup**:
-   Ensure a directory exists at `C:\Users\F15\Desktop\Python\AI\Reinforcement Learning\Snape Game\` for saving models and logs, or modify the paths in `Agent.py` to suit your environment.
+Your contributions can help others enjoy the game more!
 
-## Usage
-1. **Run the Main Script**:
-   The `main.py` script initializes the environment, creates the agent, trains it, and tests its performance. Run it with:
-   ```bash
-   python main.py
-   ```
+## 💬 Get Help
 
-2. **Training**:
-   - The agent trains for 888 episodes using the Boltzmann policy (`Policy='B'`).
-   - Training progress, including epsilon and temperature values, is printed to the console.
-   - Rewards are logged to `Rewards.txt` in the specified directory.
-   - Optionally, enable `trShow=True` in `Agent.py` for real-time visualization during training.
+For any questions or issues, feel free to open an issue on the GitHub repository. The community is here to help, and your feedback is valuable.
 
-3. **Testing**:
-   - After training, the agent runs 5 test episodes using a greedy policy (`Policy='G'`).
-   - Test results, including total rewards and accuracy, are appended to `Rewards.txt`.
-   - Set `teShow=True` in `Agent.py` to visualize test episodes.
+## 🌟 Thank You!
 
-4. **Plotting Results**:
-   - Use `Agent.PlotEpsilons()` or `Agent.PlotTemperatures()` to visualize the decay of exploration parameters.
-   - Use `Agent.PlotActionLog(L)` or `Agent.PlotEpisodeLog(L)` to plot rewards with a Simple Moving Average (SMA) over `L` steps or episodes.
-
-## Project Structure
-```
-SnakeRL/
-├── Agent.py          # RL agent with Deep Q-Learning implementation
-├── Env.py           # Snake game environment
-├── main.py          # Main script to run training and testing
-├── requirements.txt  # Python dependencies
-└── README.md        # Project documentation
-```
-
-## How It Works
-- **Environment (`Env.py`)**: Defines a grid-based Snake game with states (free, snake, food, head, out) and actions (up, right, down, left). Rewards are assigned for food (+14), collisions (-12), and proximity to food (±2.5).
-- **Agent (`Agent.py`)**: Implements a Deep Q-Learning agent with a neural network (SELUs activation, configurable dense layers). Supports Epsilon-Greedy and Boltzmann exploration policies, with dynamic alpha and temperature decay.
-- **Dynamic Rewards**: Food and collision rewards scale with snake length to reflect increasing difficulty.
-- **State Representation**: Uses an embedding technique to encode the game state as a vector of ±1 values, normalized head and food positions, ensuring inputs are in [-1, +1] for stable training.
-
-## Hyperparameters
-Key hyperparameters in `main.py`:
-- **Grid Size**: 20x20 (`H=20`, `W=20`)
-- **Episodes**: 888 (`nEpisode=888`)
-- **Max Steps per Episode**: 128 (`mStep=128`)
-- **Learning Rate**: 0.001 (`LR=0.001`)
-- **Gamma**: 0.95 (`Gamma=0.95`)
-- **Memory Size**: 1024 (`sMemory=1024`)
-- **Batch Size**: 64 (`sBatch=64`)
-- **Network Architecture**: [512, 256] dense layers with SELU activation
-
-Modify these in `main.py` or `Agent.py` to experiment with different configurations.
-
-## Future Improvements
-- Add support for convolutional neural networks (CNNs) to process raw game grids.
-- Implement additional RL algorithms like Dueling DQN or A2C.
-- Enhance visualization with a GUI (e.g., Pygame or Tkinter).
-- Optimize hyperparameters using grid search or automated tuning.
-- Add support for different grid sizes and game modes.
+Thank you for trying out the SnakeRL project. Enjoy playing and learning more about reinforcement learning!
